@@ -1,40 +1,43 @@
 import { FunctionComponent } from 'react';
 import clsx from 'clsx';
-
-import { usePressObserver } from '../PressObserver/usePressObserver';
-
 import { NoteType } from '../../domain/note';
+import { usePressObserver } from '../PressObserver/usePressObserver';
 import styles from './Key.module.css';
 
 type PressCallback = () => void;
-
 type KeyProps = {
 	type: NoteType;
 	label: string;
 	disabled?: boolean;
-	onDown: PressCallback;
+
 	onUp: PressCallback;
+	onDown: PressCallback;
 };
 
 export const Key: FunctionComponent<KeyProps> = ({
 	type,
 	label,
-	disabled,
 	onDown,
 	onUp,
+	...rest
 }) => {
 	const pressed = usePressObserver({
 		watchKey: label,
 		onStartPress: onDown,
 		onFinishPress: onUp,
 	});
+
 	return (
 		<button
-			className={clsx(styles.key, styles[type], pressed && 'is-pressed')}
-			type="button"
-			disabled={disabled}
+			className={clsx(
+				styles.key,
+				styles[type],
+				pressed && styles[`${type}-is-pressed`]
+			)}
 			onMouseDown={onDown}
-			onMouseUp={onDown}
+			onMouseUp={onUp}
+			type="button"
+			{...rest}
 		>
 			{label}
 		</button>

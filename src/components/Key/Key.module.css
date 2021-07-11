@@ -28,14 +28,14 @@
 }
 
 .natural:active,
-.natural.is-pressed {
+.natural-is-pressed {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
 .sharp:active,
-.sharp.is-pressed,
+.sharp-is-pressed,
 .flat:active,
-.flat.is-pressed {
+.flat-is-pressed {
 	background-color: #555;
 }
 
