@@ -30,7 +30,7 @@ export const Key: FunctionComponent<KeyProps> = ({
 	});
 	return (
 		<button
-			className={clsx(styles.key, styles[type], pressed && 'isPressed')}
+			className={clsx(styles.key, styles[type], pressed && 'is-pressed')}
 			type="button"
 			disabled={disabled}
 			onMouseDown={onDown}
