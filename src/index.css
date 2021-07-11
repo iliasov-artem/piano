@@ -1,0 +1,30 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+:root {
+	--footer-height: 60px;
+	--logo-height: 8rem;
+}
+
+button {
+	border: none;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+	width: auto;
+	background: none;
+	appearance: none;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+	cursor: pointer;
+	-webkit-font-smoothing: inherit;
+	-moz-osx-font-smoothing: inherit;
+}
